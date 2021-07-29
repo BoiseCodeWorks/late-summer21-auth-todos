@@ -3,11 +3,12 @@ import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
 
 class AppState extends EventEmitter {
+  // THis is the object from Auth0
   user = {}
+  // this is the object from your Database
   account = {}
-  /** @type {import('./Models/Value').Value[]} */
-  values = []
-  socketData = []
+  /** @type {import('./Models/Todo').Todo[]} */
+  todos = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {
