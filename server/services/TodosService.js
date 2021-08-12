@@ -13,6 +13,7 @@ class TodosService {
     if (!todo) {
       throw new BadRequest('Invalid Id')
     }
+    // NOTE checks that the person requesting the object is the one who made it
     if (todo.creatorId.toString() !== userId) {
       throw new Forbidden('This is not your todo')
     }
@@ -26,6 +27,20 @@ class TodosService {
       .populate('creator', 'name picture')
       .populate('project', 'name')
       .execPopulate()
+  }
+
+  // REVIEW
+  async edit(updated) {
+    const todo = await dbContext.Todos.findById(updated.id)
+    if (!todo) {
+      throw new BadRequest('Invalid Id')
+    }
+    // NOTE checks that the person requesting the object is the one who made it
+    if (todo.creatorId.toString() !== updated.creatorId) {
+      throw new Forbidden('This is not your todo')
+    }
+    const afterUpdate = await dbContext.Todos.findByIdAndUpdate(updated.Id, updated, { new: true })
+    return afterUpdate
   }
 }
 
