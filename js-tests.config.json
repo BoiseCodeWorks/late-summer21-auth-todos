@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "test": "node ./__tests__/config/tests-main.js",
+    "test:watch": "nodemon --ignore ./__report__/ ./__tests__/config/tests-main.js",
+    "test:report": "nodemon -r esm --ignore ./__report__/ ./__tests__/config/test-server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^3.7.0",
+    "jasmine-json-test-reporter": "^1.0.0-beta",
+    "jasmine-pretty-html-reporter": "^0.2.5",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nodemon": "^2.0.7"
+  }
+}

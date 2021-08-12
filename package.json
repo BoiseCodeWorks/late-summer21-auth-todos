@@ -8,7 +8,10 @@
     "start": "node index.js",
     "dev": "node index.js",
     "setup": "npm install",
-    "sass": "sass --watch client/assets/scss/main.scss:client/assets/style/main.css"
+    "sass": "sass --watch client/assets/scss/main.scss:client/assets/style/main.css",
+    "test": "node ./__tests__/config/tests-main.js",
+    "test:watch": "nodemon --ignore ./__report__/ ./__tests__/config/tests-main.js",
+    "test:report": "nodemon -r esm --ignore ./__report__/ ./__tests__/config/test-server.js"
   },
   "author": "Codeworks",
   "license": "ISC",
@@ -33,6 +36,11 @@
     "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.1.0",
-    "sass": "^1.32.13"
+    "sass": "^1.32.13",
+    "jasmine": "^3.7.0",
+    "jasmine-json-test-reporter": "^1.0.0-beta",
+    "jasmine-pretty-html-reporter": "^0.2.5",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nodemon": "^2.0.7"
   }
 }

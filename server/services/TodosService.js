@@ -21,7 +21,11 @@ class TodosService {
 
   async create(body) {
     const todo = await dbContext.Todos.create(body)
-    return await this.getOne(todo._id, body.creatorId)
+    // return await this.getOne(todo._id, body.creatorId)
+    return await todo
+      .populate('creator', 'name picture')
+      .populate('project', 'name')
+      .execPopulate()
   }
 }
 

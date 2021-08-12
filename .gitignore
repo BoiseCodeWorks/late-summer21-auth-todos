@@ -1,2 +1,5 @@
 node_modules 
-.env
+.envnode_modules
+__report__
+coverage
+.nyc_output

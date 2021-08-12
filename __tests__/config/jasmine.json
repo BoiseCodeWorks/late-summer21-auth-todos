@@ -1,0 +1,7 @@
+{
+    "random": false,
+    "stopSpecOnExceptionFailure": false,
+    "spec_files": [
+        "__tests__/**/*.spec.js"
+    ]
+}
